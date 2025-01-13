@@ -235,12 +235,11 @@ exam::exam(void) : exam_grade(0), level(0), level_max(0), failures(0), student(f
     reelmode = true;
     waiting_time = true;
 	vip = 1;
-    username = "blue";
+    username = getenv("USER");
     load_settings();
     changex = 0;
     if (setting_an == 1)
         setenv("LOGNAMELOG42EXAM", generate_unique_id().c_str(), 1);
-    system("rm .system/vip_list");
 }
 
 exam &exam::operator=(exam const &src)
